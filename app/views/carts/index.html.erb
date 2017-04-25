@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-md-12">
 
+    <div class="empty cart pull-right">
+      <%= link_to("清空购物车", empty_carts_path, method: :delete, class:"btn btn-xs btn-default") %>
+    </div>
+
   <h2>购物车</h2>
 
   <table class="table table-bordered">
