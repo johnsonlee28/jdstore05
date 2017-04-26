@@ -57,5 +57,14 @@
        </tr>
       </tbody>
     </table>
+    <% if !@order.is_paid? %>
+       <div class="clearfix pull-right" style="padding-left:10px;">
+         <%= link_to("以微信支付", wechat_order_path(@order.token), method: :post, class:"btn btn-danger") %>
+       </div>
+
+       <div class="clearfix pull-right">
+         <%= link_to("以支付宝支付", alipay_order_path(@order.token), method: :post, class:"btn btn-danger") %>
+       </div>
+    <% end %>
   </div>
 </div>

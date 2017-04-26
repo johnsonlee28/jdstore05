@@ -21,7 +21,12 @@ Rails.application.routes.draw do
 
   end
 
-  resources :orders
+  resources :orders do
+    member do
+      post :alipay
+      post :wechat
+    end
+  end 
 
   namespace :account do
     resources :orders
