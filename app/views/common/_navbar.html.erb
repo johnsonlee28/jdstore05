@@ -28,9 +28,10 @@
             </a>
             <ul class="dropdown-menu">
               <% if current_user && current_user.admin? %>
-                <li><%= link_to(content_tag(:i, "Admin Panel", class:'fa fa-gear'), admin_products_path) %></li>
+                <li><%= link_to(content_tag(:i, " Admin Panel", class:'fa fa-gear'), admin_products_path) %></li>
               <% end %>
-                <li><%= link_to(content_tag(:i, '登出', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to(content_tag(:i, " My Orders", class:'fa fa-paperclip'),account_orders_path) %></li>
+                <li><%= link_to(content_tag(:i, ' 登出', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
 
             </ul>
           </li>
