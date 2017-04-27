@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     member do
       post :alipay
       post :wechat
+      post :apply_to_cancel
     end
   end
 
