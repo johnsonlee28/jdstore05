@@ -16,4 +16,13 @@ class ApplicationController < ActionController::Base
     return cart
   end
 
+  def require_admin
+    if !current_user.admin?
+      flash[:warning] = "You have no permission!"
+      redirect_to root_path
+    end
+  end
+
+
+
 end
