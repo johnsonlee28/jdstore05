@@ -7,4 +7,8 @@ class Admin::OrdersController < ApplicationController
     @orders = Order.order("id DESC")
   end
 
+  def show
+    @order = Order.find_by_token(params[:id])
+    @product_lists = @order.product_lists
+  end
 end
