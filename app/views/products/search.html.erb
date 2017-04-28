@@ -4,7 +4,7 @@
       Sorry, The search content cannot be blank, please type some product into to search.
     </div>
   <% elsif @products.blank? %>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字</h2>
+    <h2 class="search-info-title">没有找到 "<%= @query_string %>" 的产品信息 </h2>
   <% else %>
     <h2 class="search-info-title">有关 "<%= @query_string %>" 的产品信息</h2>
     <div class="search-result">
@@ -27,5 +27,8 @@
 
 </div>
 <div class="text-center">
-  <%= will_paginate(@products, render: BootstrapPagination::Rails)%>
+  <% if @query_string.blank? %>
+  <% else %>
+    <%= will_paginate(@products, render: BootstrapPagination::Rails)%>
+  <% end %>
 </div>
