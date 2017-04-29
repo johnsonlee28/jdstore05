@@ -1,0 +1,18 @@
+/* Footer section--------------- */
+#footerSection {background:rgba(188, 155, 93, 1);
+                color: white;
+                padding: 28px 0 44px;
+                margin-top: 20px;
+                font-style:normal;
+                font-variant-ligatures: normal;
+                font-weight:normal;
+                font-size:15px;
+                line-height:1.4em;
+                font-family:futura-lt-w01-light,sans-serif;
+                -webkit-font-smoothing: antialiased;
+              }
+#footerSection a{color:#ccc; font-size:11px; padding:0; line-height:24px; display:block; }
+#footerSection a:hover{color:#fff;  }
+#footerSection  #socialMedia a{ min-width:25px; display:inline; margin-right:6px; text-align:center; line-height:1.5em;}
+#socialMedia img{max-width:60px;}
+#footerSection  #socialMedia a:hover{background:none;}
