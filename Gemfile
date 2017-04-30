@@ -38,7 +38,12 @@ gem 'mini_magick'
 gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
+
 gem 'paperclip'
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
 
 
 group :development, :test do
