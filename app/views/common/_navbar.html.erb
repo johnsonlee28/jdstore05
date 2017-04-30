@@ -34,17 +34,15 @@
           <li><%= link_to("注册", new_user_registration_path) %></li>
           <li><%= link_to(content_tag(:i, '登入', class:'fa fa-sign-in'), new_user_session_path) %></li>
         <% else %>
-          <li class="round-image-50">
-            <% if current_user.avatar.present? %>
-              <%= image_tag(current_user.avatar.url(:thumb)) %>
-            <% else %>
-              <%= image_tag("http://placehold.it/30x30") %>
-            <% end %>
-          </li>
           <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-              <b class="caret"></b>
-            </a>
+            <button class="btn btn-default dropdown-toggle round-image-50" type="button" id="menu1" data-toggle="dropdown">
+              <% if current_user.avatar.present? %>
+                <%= image_tag(current_user.avatar.url(:thumb)) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/50x50") %>
+              <% end %>
+            </button>
+            <b class="caret"></b>
             <ul class="dropdown-menu">
               <% if current_user && current_user.admin? %>
                 <li><%= link_to(content_tag(:i, " Admin Panel", class:'fa fa-gear'), admin_products_path) %></li>
