@@ -17,9 +17,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "footer";
+@import "navbar";
+
+/* universe */
+html,body{
+  height: 100%
+}
+
+#header{
+  height: 100px;
+  width: 100%;
+}
+
+#holder{
+  min-height: 100%;
+  position: relative;
+}
+
+#body{
+  padding-bottom: 100px;
+}
+
+#footer{
+  bottom: 0;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  right: 0;
 
 /* search */
 #search-id{
   width: 400px;
   padding-top: 7px;
+
 }
