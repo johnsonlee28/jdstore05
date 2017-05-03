@@ -12,6 +12,19 @@
         <li><%= link_to("Orders", admin_orders_path) %></li>
 
       </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 分类 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% Category.all.each do |category|%>
+              <li>
+                <%= link_to category.name, products_path(category: category.name), class: "link"%>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
       <div class="nav navbar-nav navbar-left">
         <%= form_tag search_products_path, method: :get do %>
           <div class="input-group" id="search-id">
