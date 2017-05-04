@@ -1,6 +1,8 @@
-<div class="row">
-  <h1><%= @product.category.try(:name) %></h1>
-  <div class="preview col-md-6">
+
+  <div class="product-show-page">
+    <div class="row product-content">
+      <h3><%= @product.category.try(:name) %></h3>
+       <div class="preview col-md-6">
     <!-- <div class="preview-pic tab-content">
     <% if @product.photos.present? %>
       <div class="tab-pane active" id="pic-1"><%= image_tag(@product.photos[0].avatar.medium.url) %></div>
@@ -18,51 +20,54 @@
    <% end %> -->
 
 
-   <div class="intro clearfix">
-    <div class="cover fl">
-      <div class="intro-bigPic border pr">
-        <div class="magnifier-preview border" id="preview"></div>
-        <% if @photos.present? %>
-          <a class="magnifier-thumb-wrapper" href="javascript:;">
-            <img
-              id="thumb"
-              src="<%= @photos.first.avatar.medium.url %>"
-              data-large-img-wrapper="preview"
-              data-large-img-url="<%= @photos.first.avatar.medium.url %>">
-          </a>
-        <% end %>
-      </div>
-      <ul class="intro-preview clearfix">
-        <% if @photos.present? %>
-          <% @photos.each_with_index do |p, index| %>
-            <% if index == 0 %>
-              <li class="border intro-preview-item intro-preview-activeItem fl">
-            <% else %>
-              <li class="border intro-preview-item fl">
-            <% end %>
-            <% if index < 5 %>
-              <%= image_tag p.avatar.medium.url %>
-            <% end %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-      </div>
-  </div>
-  </div>
-  <div class="col-md-6">
-    <h2><%= @product.title %></h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
+        <div class="intro clearfix">
+         <div class="cover fl">
+           <div class="intro-bigPic border pr">
+             <div class="magnifier-preview border" id="preview"></div>
+             <% if @photos.present? %>
+               <a class="magnifier-thumb-wrapper" href="javascript:;">
+                 <img
+                   id="thumb"
+                   src="<%= @photos.first.avatar.medium.url %>"
+                   data-large-img-wrapper="preview"
+                   data-large-img-url="<%= @photos.first.avatar.medium.url %>">
+               </a>
+             <% end %>
+           </div>
+           <ul class="intro-preview clearfix">
+             <% if @photos.present? %>
+               <% @photos.each_with_index do |p, index| %>
+                 <% if index == 0 %>
+                   <li class="border intro-preview-item intro-preview-activeItem fl">
+                 <% else %>
+                   <li class="border intro-preview-item fl">
+                 <% end %>
+                 <% if index < 5 %>
+                   <%= image_tag p.avatar.medium.url %>
+                 <% end %>
+                 </li>
+               <% end %>
+             <% end %>
+           </ul>
+           </div>
+       </div>
+       </div>
+       <div class="col-md-6">
+         <h2><%= @product.title %></h2>
+         <div style="height:100px;">
+           <p>
+             <%= @product.description %>
+           </p>
+         </div>
+         <div>数量： <%= @product.quantity %></div>
+         <div class="product-price"> ￥ <%= @product.price %></div>
+       </div>
+
+         <% if current_user %>
+           <div class="add_to_cart">
+             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class:"btn btn-lg btn-danger") %>
+           </div>
+         <% end %>
+
     </div>
-    <div>数量： <%= @product.quantity %></div>
-    <div class="product-price"> ￥ <%= @product.price %></div>
-    <% if current_user %>
-      <div class="pull-right">
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class:"btn btn-lg btn-danger") %>
-      </div>
-    <% end %>
   </div>
-</div>

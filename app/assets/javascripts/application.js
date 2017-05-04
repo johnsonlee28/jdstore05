@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+/* product-preview */
 $(document).on('mouseover', '.intro-preview-item', function () {
   var src = $(this).find('img').attr('src')
   $('.intro-bigPic img').attr('src', src)
