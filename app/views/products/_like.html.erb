@@ -1,0 +1,6 @@
+共有<%= @product.liked_users.count %>人点赞
+<% unless product.find_like(current_user) %>
+  <%= link_to "赞", like_product_path(product), :method => :post, :remote => true, :class => "btn btn-primary"%>
+<% else %>
+  <%= link_to "取消", unlike_product_path(product), :method => :post, :remote => true, :class => "btn btn-primary" %>
+<% end %>

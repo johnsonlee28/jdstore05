@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @photos = @product.photos.all 
+    @photos = @product.photos.all
   end
 
   def add_to_cart
@@ -29,6 +29,22 @@ class ProductsController < ApplicationController
       search_result = Product.ransack(@search_criteria).result(distinct: true)
       @products = search_result.paginate(page: params[:page], per_page: 5)
     end
+  end
+
+  def like
+    @product = Product.find(params[:id])
+    unless @product.find_like(current_user)
+      Like.create( :user => current_user, :product => @product )
+    end
+    render "like"
+  end
+
+  def unlike
+    @product = Product.find(params[:id])
+    like = @product.find_like(current_user)
+    like.destroy
+
+    render "like"
   end
 
   protected
