@@ -48,8 +48,18 @@ html,body{
 
 #navigation{
   background-color:#FAFAFA;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   border-radius: 0px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -webkit-transition:all 0.6s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.6s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.6s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.6s ease-in-out; /*让「IE浏览器」支持这个属性*/
+
+}
+
+#navigation:hover{
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
 }
 
