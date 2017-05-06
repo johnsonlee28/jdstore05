@@ -1,7 +1,9 @@
 
+<div class="product-category">
+  <%= @product.category.try(:name) %>
+</div>
   <div class="product-show-page">
     <div class="row product-content">
-      <h3><%= @product.category.try(:name) %></h3>
        <div class="preview col-md-6">
     <!-- <div class="preview-pic tab-content">
     <% if @product.photos.present? %>
@@ -53,28 +55,60 @@
        </div>
        </div>
        <div class="col-md-6">
-         <h2><%= @product.title %></h2>
-         <div style="height:100px;">
-           <p>
-             <%= @product.description %>
-           </p>
-         </div>
-         <div>数量： <%= @product.quantity %></div>
-         <div class="product-price"> ￥ <%= @product.price %></div>
-       </div>
-
-       <div class="text">
-           
-        <% if current_user %>
-          <span id="product-like-<%= @product.id %>">
-            <%= render :partial => "like", :locals => { :product => @product} %>
-          </span>
-
-           <div class="add_to_cart">
-             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class:"btn btn-lg btn-danger") %>
+         <div class="product-info-head">
+           <div class="product-title"><%= @product.title %></div>
+           <div class="like">
+             <% if current_user %>
+               <span id="product-like-<%= @product.id %>">
+                 <%= render :partial => "like", :locals => { :product => @product} %>
+               </span>
+             <% end %>
            </div>
-         <% end %>
-      </div>
+         </div>
+         <p class="product-subdesc">
+           <%= @product.description %>
+         </p>
+         <div class="price-promo">
+            <div class="product-price mt10">
+             <span class="label label-1 ml2">售价 </span>
+             <span class="rmb mt20">￥</span>
+             <span class="num product-retail-price mt16"><%= @product.price %></span>
+            </div>
+            <div class="product-promo mt10">
+              <span class="label label-2 ml2">促销 </span>
+            </div>
+            <div class="product-service mt10">
+              <span class="label label-3 ml2">服务 </span>
+               <div class="service-content">
+                 <span class="label label-4">•30天无忧退货</span>
+                 <span class="label label-4">•快速退货</span>
+                 <span class="label label-4">•满88元免邮费</span>
+               </div>
+            </div>
+            <div class="product-size">
+              <span class="label label-3">尺寸</span>
+            </div>
+            <div class="product-quantity">
+              <span class="label label-3">数量</span>
+              <span class="label label-4"><%= @product.quantity %></span>
+            </div>
+            <div class="add-cart-like col-md-12">
+                <div class="add_to_cart col-md-7">
+                  <%= link_to add_to_cart_product_path(@product), method: :post, class:"btn btn-block btn-danger" do %>
+                     <i class="fa fa-shopping-cart"></i> <span class="add">加入购物车</span>
+                  <% end %>
+                </div>
+
+                <div class="buynow col-md-4">
+                  <%= link_to buynow_product_path(@product), method: :post, class:"btn btn-block btn-default" do %>
+                     <span class="buy-it-now">立刻购买</span>
+                  <% end %>
+                </div>
+            </div>
+
+         </div>
+
+
 
     </div>
   </div>

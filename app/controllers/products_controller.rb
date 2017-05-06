@@ -24,6 +24,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buynow
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+      redirect_to carts_path
+    else
+      redirect_to :back, alert:"购物车已存在#{@product.title}商品"
+    end
+  end
+
+
+
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(distinct: true)

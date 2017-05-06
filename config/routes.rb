@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :buynow
       post "like" => "products#like"
       post "unlike" => "products#unlike"
     end
