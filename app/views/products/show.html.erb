@@ -105,6 +105,15 @@
                   <% end %>
                 </div>
             </div>
+            <div class="collect-and-share">
+              <% if current_user %>
+                <div id="collect-<%= @product.id %>">
+                  <%= render :partial => "collect", :locals => { :product => @product }%>
+                </div>
+              <% end %>
+
+
+            </div>
 
          </div>
 

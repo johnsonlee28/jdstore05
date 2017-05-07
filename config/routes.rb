@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       post :buynow
       post "like" => "products#like"
       post "unlike" => "products#unlike"
+      post "collect" => "products#collect"
+      post "uncollect" => "products#uncollect"
     end
     collection do
       get :search

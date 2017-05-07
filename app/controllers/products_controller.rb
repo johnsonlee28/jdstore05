@@ -59,6 +59,22 @@ class ProductsController < ApplicationController
     render "like"
   end
 
+  def collect
+    @product = Product.find(params[:id])
+    unless @product.find_collect(current_user)
+      Collect.create( :user => current_user, :product => @product)
+    end
+    render "collect"
+  end
+
+  def uncollect
+    @product = Product.find(params[:id])
+    collect = @product.find_collect(current_user)
+    collect.destroy
+
+    render "collect"
+  end
+
   protected
 
   def validate_search_key
