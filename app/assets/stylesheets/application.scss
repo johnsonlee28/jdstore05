@@ -21,6 +21,21 @@
 @import "navbar";
 @import "products";
 
+/* comments */
+ textarea.form-control {
+   height: 120px;
+ }
+
+ .pro-comment-btn .btn{
+   width: 200px;
+ }
+
+ .comment-time {
+   margin-top: 30px;
+   padding-left: 220px;
+   font-size: 50%;
+ }
+
 /* login/signup page*/
 .login-page{
   width: 400px;
@@ -65,7 +80,7 @@ html,body{
 }
 
 #body{
-  //padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 #navigation{
