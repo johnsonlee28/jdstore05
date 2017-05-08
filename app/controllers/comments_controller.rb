@@ -2,14 +2,17 @@ class CommentsController < ApplicationController
 
   before_action :authenticate_user!
 
+
   def create
-    @comment = Comment.new
+    @product = Product.find(params[:product_id])
+    @comment = Comment.new(comment_params)
     @comment.user = current_user
-    if @comment.update(comment_params)
-       redirect_to :back
-     else
-       render :new
-     end
+    @comment.product = @product
+    if @comment.save
+      redirect_to :back
+    else
+      render :new
+    end
   end
 
   private

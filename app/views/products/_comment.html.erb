@@ -13,7 +13,7 @@
       <% end %>
     </div>
   <% end %>
-  <%= simple_form_for @comment do |f|%>
+  <%= simple_form_for [@product, @comment] do |f|%>
   <div class="pro-comment">
     <%= f.input :description, label: "评论"%>
   </div>
