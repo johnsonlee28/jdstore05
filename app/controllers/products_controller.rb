@@ -26,6 +26,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def buynow
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+      redirect_to carts_path
+    else
+      redirect_to :back, alert:"购物车已存在#{@product.title}商品"
+    end
+  end
+
+
+
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(distinct: true)
@@ -47,6 +59,22 @@ class ProductsController < ApplicationController
     like.destroy
 
     render "like"
+  end
+
+  def collect
+    @product = Product.find(params[:id])
+    unless @product.find_collect(current_user)
+      Collect.create( :user => current_user, :product => @product)
+    end
+    render "collect"
+  end
+
+  def uncollect
+    @product = Product.find(params[:id])
+    collect = @product.find_collect(current_user)
+    collect.destroy
+
+    render "collect"
   end
 
   protected

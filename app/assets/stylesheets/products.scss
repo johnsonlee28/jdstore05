@@ -4,16 +4,23 @@
 
 /* product-show-page-content */
 
+.product-category{
+  font-size: 14px;
+  padding-top:10px;
+  padding-bottom: 0px;
+}
+
 .product-show-page {
   width: 950px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .product-content{
   width: 950px;
   background: #fff;
   margin-bottom: 20px;
   padding-bottom: 15px;
+  padding-top:20px;
   border: 1px solid #BDBDBD;
 }
 
@@ -69,8 +76,8 @@
 //   padding-top: 15px;
 // }
 
-/* multi photos for product-show-page */
 
+/* multi photos for product-show-page */
 #preview{
 
   -webkit-box-flex: 1;
@@ -146,3 +153,147 @@
    padding-top: 8px;
    border-radius: 0 !important;
  }
+
+/* product-info */
+.product-title{
+  float:left;
+  font-size:28px;
+  font-weight:700;
+  line-height:20px;
+  padding-top:6px;
+  box-sizing: border-box;
+  display:block;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+
+.like{
+  float:right;
+  .circle-thumb{
+    color:red;
+  }
+}
+
+.product-subdesc{
+  clear:both;
+  font-size:18px;
+  padding-bottom:10px;
+  padding-top:13px;
+  line-height: 28px;
+  width:300px;
+  box-sizing: border-box;
+  display: block;
+  color:#999;
+}
+
+.price-promo{
+  background-color: #f5f3ef;
+  border-top:1px dotted #dedede;
+  border-bottom:1px dotted #dedede;
+  padding:0 0 16px;
+  height:120px;
+  box-sizing: border-box;
+  display: block;
+  word-wrap: break-word;
+  word-break:break-all;
+  color:#666;
+  font-size:18px;
+  font-family: "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+
+}
+
+.label-1{
+  line-height:30px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:0px;
+  font-weight: lighter;
+}
+
+.label-2{
+  line-height:14px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:3px;
+  clear:both;
+  font-weight:lighter;
+}
+.label-3{
+  line-height:45px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:3px;
+  clear:both;
+  font-weight:lighter;
+
+}
+
+.label-4{
+  line-height:40px;
+  float:left;
+  color:#666;
+  display: inline-block;
+  font-weight:lighter;
+  font-size: 12px;
+  margin-top:8px;
+  vertical-align: super;
+}
+
+
+.rmb{
+  margin-left:10px;
+  line-height: 30px;
+  color:#d7282d;
+  font-size: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.product-retail-price{
+  font-size: 28px;
+  line-height: 30px;
+  margin-left:0px;
+  color:#d7282d;
+
+}
+
+.icon-normal-point{
+  margin:4px 4px 0 0;
+  height:3px;
+  width:3px;
+  display:inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  font-size: 12px;
+  word-spacing: normal;
+  letter-spacing: normal;
+  font-style:normal;
+  line-height: 12px;
+  color:#666;
+  white-space: nowrap;
+  background-image: url(http://mimg.127.net/hxm/yanxuan-web/p/20150730/style/img/x1/icon-normal-sc14c86462d-ce0bea8855.png);
+  background-repeat: no-repeat;
+
+}
+.product-size,.add-cart-like{
+  clear:both;
+  display: block;
+  padding:0px;
+}
+
+.buynow{
+  padding-right:0px;
+  span{
+    font-size:18px;
+  }
+}
+
+.add_to_cart{
+  padding:0px;
+  span{
+    font-size:18px;
+  }
+}
