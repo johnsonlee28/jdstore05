@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+
+    resources :comments
   end
 
   resources :carts do
@@ -51,4 +53,6 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
+
+
 end

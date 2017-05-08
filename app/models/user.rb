@@ -19,7 +19,7 @@ class User < ApplicationRecord
     is_admin
   end
 
-
+  has_many :comments
 
 
 end
