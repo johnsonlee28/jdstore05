@@ -64,7 +64,7 @@
        </div>
 
        <div class="text">
-           
+
         <% if current_user %>
           <span id="product-like-<%= @product.id %>">
             <%= render :partial => "like", :locals => { :product => @product} %>
@@ -77,4 +77,7 @@
       </div>
 
     </div>
+  </div>
+  <div class="container">
+    <%= render "comment"%>
   </div>
