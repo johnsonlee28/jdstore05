@@ -1,8 +1,10 @@
 
-<div class="product-category">
-  <%= @product.category.try(:name) %>
-</div>
+
   <div class="product-show-page">
+    <div class="product-category">
+      <span><%= link_to "所有商品", products_path %></span> >
+        <%= @product.category.try(:name) %>
+    </div>
     <div class="row product-content">
        <div class="preview col-md-6">
     <!-- <div class="preview-pic tab-content">
@@ -65,9 +67,16 @@
              <% end %>
            </div>
          </div>
-         <p class="product-subdesc">
+         <div class="product-subdesc">
            <%= @product.description %>
-         </p>
+           <div class="collect-and-share">
+             <% if current_user %>
+               <div id="collect-<%= @product.id %>">
+                 <%= render :partial => "collect", :locals => { :product => @product }%>
+               </div>
+             <% end %>
+           </div>
+         </div>
          <div class="price-promo">
             <div class="product-price mt10">
              <span class="label label-1 ml2">售价 </span>
@@ -105,20 +114,15 @@
                   <% end %>
                 </div>
             </div>
-            <div class="collect-and-share">
-              <% if current_user %>
-                <div id="collect-<%= @product.id %>">
-                  <%= render :partial => "collect", :locals => { :product => @product }%>
-                </div>
-              <% end %>
-
-
+          </div>
+          <div class="social-share">
+            <div class="share-lists">
+              <i class="fa fa-share-alt-square fa-lg" aria-hidden="true"></i>分享
             </div>
-
-         </div>
-
+            <div class="list"> <%= social_share_button_tag(@product.title)%></div>
+          </div>
+        </div>
     </div>
-  </div>
   <div class="container">
     <%= render "comment"%>
   </div>

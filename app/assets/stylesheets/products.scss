@@ -8,6 +8,13 @@
   font-size: 14px;
   padding-top:10px;
   padding-bottom: 0px;
+
+  a:link{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 }
 
 .product-show-page {
@@ -180,7 +187,6 @@
   padding-bottom:10px;
   padding-top:13px;
   line-height: 28px;
-  width:300px;
   box-sizing: border-box;
   display: block;
   color:#999;
@@ -281,7 +287,7 @@
 .product-size,.add-cart-like{
   clear:both;
   display: block;
-  padding:0px;
+  padding:5px 0px 20px;
 }
 
 .buynow{
@@ -296,4 +302,28 @@
   span{
     font-size:18px;
   }
+}
+
+.collect-and-share{
+  display:inline;
+  float:right;
+  border:1px solid #EEEEEE;
+  border-radius: 8px;
+  padding:3px;
+
+}
+
+.social-share{
+  border-top:1px dotted #dedede;
+  clear:both;
+  display:block;
+  padding-top:10px;
+  .share-lists{
+    padding:auto;
+  }
+  .list{
+    padding-top:5px;
+
+  }
+
 }
