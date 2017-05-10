@@ -3,7 +3,7 @@
   <div class="product-show-page">
     <div class="product-category">
       <span><%= link_to "所有商品", products_path %></span> >
-        <%= @product.category.try(:name) %>
+        <%= link_to(@product.category.try(:name), products_path(category: @product.category.name)) %>
     </div>
     <div class="row product-content">
        <div class="preview col-md-6">
