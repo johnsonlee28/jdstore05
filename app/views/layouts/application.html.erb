@@ -12,10 +12,12 @@
     <div id="holder">
       <div class="container-fluid">
         <div id="header">
-          <%= render 'common/navbar' %>
-          <%= render 'common/flashes' %>
+          <div class="row">
+              <%= render 'common/navbar' %>
+          </div>
         </div>
         <div id="body">
+          <%= render 'common/flashes' %>  
           <%= yield %>
         </div>
       </div>

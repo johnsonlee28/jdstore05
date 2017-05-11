@@ -20,6 +20,29 @@
 @import "footer";
 @import "navbar";
 
+/* login/signup page*/
+.login-page{
+  width: 400px;
+  border: 1px solid #828589;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 200px;
+  right: 400px;
+}
+.login-page-photo {
+  background-image: url('http://cp1.douguo.net/upload/caiku/4/f/e/yuan_4fbd41ad3f86a126d8e66f8ff386b42e.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 800px;
+  margin-top: -100px;
+}
+.form-actions .btn-danger {
+  width: 300px;
+}
+
+
 /* universe */
 html,body{
   height: 100%
@@ -36,7 +59,7 @@ html,body{
 }
 
 #body{
-  padding-bottom: 100px;
+  //padding-bottom: 100px;
 }
 
 #footer{

@@ -1,17 +1,27 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="login-page-photo">
+    <h1>welcome</h1>
+    <p>这里是slogan</p>
+  </div>
+</div>
 
+<div class="login-page">
+<h2 class="text-center">欢迎注册</h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email,label: "邮箱", required: true, autofocus: true, placeholder: "请输入您的邮箱" %>
+    <%= f.input :password,label: "密码", required: true,placeholder: "至少6位密码", hint:  @minimum_password_length %>
+    <%= f.input :password_confirmation,label: "确认密码", required: true,placeholder: "再次确认的您的密码" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "立即注册", class: "btn btn-danger"%>
+    <hr>
+  </div>
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
