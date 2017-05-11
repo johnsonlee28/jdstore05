@@ -26,19 +26,43 @@
 }
 
 .product-show-page {
-  width: 950px;
-  margin: 0 auto;
-  padding-top: 10px;
+  //width: 950px;
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
 }
-.product-content{
-  width: 950px;
+
+.comment-form {
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+.comment-all {
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+/*.product-content{
+  //width: 950px;
   background: #fff;
   margin-bottom: 20px;
   padding-bottom: 15px;
   padding-top:20px;
-  border: 1px solid #BDBDBD;
+  //border: 1px solid #BDBDBD;
 }
-
+*/
 
 /* product preview tab method sideback */
 // .preview {
@@ -299,17 +323,31 @@
 }
 
 .buynow{
-  padding-right:0px;
-  span{
-    font-size:18px;
-  }
+  margin-top: 10px;
+  //padding-right:0px;
+  //span{
+    //font-size:18px;
+  //}
 }
 
 .add_to_cart{
-  padding:0px;
-  span{
-    font-size:18px;
-  }
+  margin-top: 10px;
+  //padding:0px;
+  //span{
+    //font-size:18px;
+  //}
+}
+
+/*评论图片*/
+ .commentImage {
+	width: 80px;
+  height: 80px;
+	padding: 2px;
+	margin-top: 10px;
+	margin-right: 2px;
+	&.selected {
+		border: 1px solid #d32048;
+	}
 }
 
 .collect-and-share{

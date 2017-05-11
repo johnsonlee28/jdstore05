@@ -1,11 +1,13 @@
 <% if current_user %>
   <% unless product.find_collect(current_user) %>
+
     <%= link_to collect_product_path(product), :method => :post, :remote => true do%>
       <i class="fa fa-heart fa-lg" style="color:red;"></i>
     <% end %>
   <% else %>
     <%= link_to uncollect_product_path(product), :method => :post, :remote => true do%>
       <i class="fa fa-heart-o fa-lg" ></i>
+
     <% end %>
   <% end %>
 <% end %>
