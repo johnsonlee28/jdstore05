@@ -189,6 +189,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
+    social-share-button (0.10.0)
+      coffee-rails
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -251,6 +253,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   seo_helper
   simple_form
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

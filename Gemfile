@@ -46,6 +46,7 @@ gem 'will_paginate-bootstrap'
 gem 'seo_helper'
 gem "rails-i18n"
 gem "devise-i18n"
+gem "social-share-button"
 
 
 group :development, :test do
