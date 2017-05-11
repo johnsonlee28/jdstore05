@@ -1,7 +1,10 @@
 
 <div class="container">
   <div class="product-category">
-    <%= @product.category.try(:name) %>
+    <%= link_to("所有商品", products_path)%> >
+      <%= link_to product_path(category: @product.category.name) do %>
+          <% @product.category.try(:name) %>
+      <% end %>
   </div>
     <div class="product-show-page">
       <div class="row">
@@ -49,13 +52,7 @@
                  </span>
                <% end %>
              </div>
-             <div class="collect-and-share pull-right">
-               <% if current_user %>
-                 <div id="collect-<%= @product.id %>">
-                   <%= render :partial => "collect", :locals => { :product => @product }%>
-                 </div>
-               <% end %>
-             </div>
+
            </div>
            <p class="product-subdesc">
              <%= @product.description %>
@@ -87,7 +84,7 @@
             </div>
               <div class="row">
                 <div class="add-cart-like col-md-12">
-                    <div class="add_to_cart col-md-7">
+                    <div class="add_to_cart col-md-6">
                       <%= link_to add_to_cart_product_path(@product), method: :post, class:"btn btn-block btn-danger" do %>
                          <i class="fa fa-shopping-cart"></i> <span class="add">加入购物车</span>
                       <% end %>
@@ -98,13 +95,26 @@
                          <span class="buy-it-now">立刻购买</span>
                       <% end %>
                     </div>
-                </div>
-              </div>
 
-      </div>
+                      <div class="collect-and-share col-md-2">
+                        <% if current_user %>
+                          <div id="collect-<%= @product.id %>">
+                            <%= render :partial => "collect", :locals => { :product => @product }%>
+                          </div>
+                        <% end %>
+                      </div>
+                </div>
+                <div class="social-share">
+                   <div class="share-lists pl15">
+                     <i class="fa fa-share-alt-square fa-lg" aria-hidden="true"></i> 分享
+
+                     <div class="list"> <%= social_share_button_tag(@product.title)%></div>
+                   </div>
+                 </div>
+              </div>
+          </div>
     </div>
   </div>
 </div>
 
 <%= render "comment"%>
-
