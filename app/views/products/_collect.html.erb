@@ -1,11 +1,11 @@
 <% if current_user %>
   <% unless product.find_collect(current_user) %>
-    <%= link_to collect_product_path(product), :method => :post, :remote => true, :class => "btn btn-danger" do%>
-      <i class="fa fa-heart"></i>
+    <%= link_to collect_product_path(product), :method => :post, :remote => true, style:"color:red;" do%>
+      <i class="fa fa-heart" aria-hidden="true"></i>
     <% end %>
   <% else %>
-    <%= link_to uncollect_product_path(product), :method => :post, :remote => true, :class => "btn btn-default" do%>
-      <i class="fa fa-heart-o"></i>
+    <%= link_to uncollect_product_path(product), :method => :post, :remote => true, style: "color:gray;" do%>
+      收藏 <i class="fa fa-heart-o" aria-hidden="true"></i>
     <% end %>
   <% end %>
 <% end %>

@@ -1,6 +1,12 @@
 class CommentsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :only => [:new, :create]
+
+  def new
+    @product = Product.find(params[:product_id])
+    @comment = Comment.new
+    @graphic = @comment.graphics.build
+  end
 
 
   def create
@@ -9,7 +15,12 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.product = @product
     if @comment.save
-      redirect_to :back
+      if params[:graphics] != nil
+        params[:graphics]['avatar'].each do |a|
+          @graphic = @comment.graphics.create(:avatar => a)
+        end
+      end
+      redirect_to product_path(@product)
     else
       render :new
     end
@@ -17,6 +28,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:description)
+    params.require(:comment).permit(:description, :image)
   end
 end
