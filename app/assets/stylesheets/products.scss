@@ -356,6 +356,7 @@
 
 }
 
+
 /*评论图片*/
  .commentImage {
 	width: 80px;
@@ -383,4 +384,27 @@
 
   }
 
+}
+
+.productDetail-tabList {
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.productDetail-tabList-tab {
+	cursor: pointer;
+	height: 35px;
+	line-height: 35px;
+	border-right: 1px solid #D8D8D8;
+}
+
+.productDetail-tabList-activeTab {
+	background: #F4F3F3;
+}
+
+.productDetail-content {
+	display: none;
+}
+
+.productDetail-content .productDetail-introImg img {
+	width: 700px;
 }

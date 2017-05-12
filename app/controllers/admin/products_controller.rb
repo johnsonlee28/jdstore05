@@ -14,6 +14,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
     @categories = Category.all.map{ |c| [c.name, c.id]}
     @photo = @product.photos.build #for multi-pics
+    @print = @product.prints.build
   end
 
   def create
@@ -23,6 +24,12 @@ class Admin::ProductsController < ApplicationController
       if params[:photos] != nil
         params[:photos]['avatar'].each do |a|
           @photo = @product.photos.create(:avatar => a )
+        end
+      end
+
+      if params[:prints] != nil
+        params[:prints]['avatar'].each do |a|
+          @print = @product.prints.create(:avatar => a)
         end
       end
       redirect_to admin_products_path
@@ -52,7 +59,7 @@ class Admin::ProductsController < ApplicationController
         @picture = @product.photos.create(:avatar => a)
       end
     end
-    
+
     if @product.update(product_params)
       redirect_to admin_products_path
     else

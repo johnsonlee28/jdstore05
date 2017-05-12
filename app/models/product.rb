@@ -4,7 +4,8 @@ class Product < ApplicationRecord
   belongs_to :category
 
   has_many :photos
-  has_many :comments 
+  has_many :comments
+  has_many :prints
 
   has_many :likes, :dependent => :destroy
   has_many :liked_users, :through => :likes, :source => :user
@@ -21,4 +22,5 @@ class Product < ApplicationRecord
   end
 
   accepts_nested_attributes_for :photos
+  accepts_nested_attributes_for :prints 
 end

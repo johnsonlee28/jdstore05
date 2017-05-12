@@ -31,7 +31,19 @@
         <%= f.label :avatar%>
         <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
       </div>
-
+      <div class="group">
+        <%= f.input :detail, label: "商品广告词"%>
+      </div>
+      <% if @product.prints.present? %>
+        <span>目前商品图</span>
+        <% @product.prints.each do |p|%>
+          <%= image_tag p.avatar.thumb.url %> <br>
+        <% end %>
+      <% end %>
+      <div class="group">
+        <%= f.label :产品介绍图%>
+        <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]"%>
+      </div>
       <div class="group">
         <%= f.select :category_id, @categories %>
       </div>
