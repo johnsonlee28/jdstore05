@@ -17,10 +17,10 @@
 
       <%= simple_form_for [@product, @comment] do |f|%>
       <div class="pro-comment">
-        <%= f.input :description, label: "评论"%>
+        <%= f.input :description,label: "写下你的评论", placeholder: "说点什么..."%>
       </div>
       <div class="pro-comment-pic">
-        <%= f.label :秀一秀 %><br>
+        <%= f.label :上传图片 %><br>
         <%= f.file_field :avatar, :multiple => true, name: "graphics[avatar][]"%>
       </div>
       <div class="pro-comment-btn">
