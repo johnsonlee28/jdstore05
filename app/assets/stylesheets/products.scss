@@ -2,18 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* product-index */
+// .product-index-page {
+//   margin-top: 15px;
+//    padding: 15px;
+//    border: none;
+//    transition: box-shadow 0.5s;
+//    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+//    background-color: #fff;
+//    border-radius: 4px;
+// }
+// .product-item-pic {
+//   margin-left: 20px;
+//   margin-right: 20px;
+//   margin-top: 40px;
+//
+// }
+// .product-item-pic:hover {
+//   border: 1px solid #F4F3F3;
+//   border-radius:5px;
+//   transition: box-shadow 0.5s;
+//   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+// }
+
+// .product-item-pic img {
+//   width: 100%
+// }
+// .product-item-pic img.thumbnail {
+// border: none;
+// }
+
 .masonry-container{
   margin:0 auto;
 }
 
 .box{
   margin:5px;
-  width:214px;
+  max-width:214px;
+  padding:5px;
 }
 
 .box img{
   width:100%;
 }
+
+.box:hover{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+
 
 /* product-show-page-content */
 
@@ -398,6 +435,23 @@
   }
 
 }
+
+/* comments */
+ textarea.form-control {
+   height: 120px;
+ }
+
+ .pro-comment-btn .btn{
+   width: 200px;
+ }
+
+ .comment-time {
+   margin-top: 30px;
+   padding-left: 220px;
+   font-size: 50%;
+ }
+
+
 /*评论选项*/
 .productDetail-tabList {
 	border-bottom: 1px solid #D8D8D8;

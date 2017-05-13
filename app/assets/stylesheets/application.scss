@@ -24,78 +24,14 @@
 @import "social-share-button";
 @import "masonry/fluid";
 
-/* product-index*/
-.product-index-page {
-  margin-top: 15px;
-   padding: 15px;
-   border: none;
-   transition: box-shadow 0.5s;
-   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
-   background-color: #fff;
-   border-radius: 4px;
-}
-.product-item-pic {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 40px;
-
-}
-.product-item-pic:hover {
-  border: 1px solid #F4F3F3;
-  border-radius:5px;
-  transition: box-shadow 0.5s;
-  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
-}
-
-.product-item-pic img {
-  width: 100%
-}
-.product-item-pic img.thumbnail {
-border: none;
-}
-
 
 /*背景颜色*/
 .all-background {
-  background-color: #F4F3F3;
+  // background-color: #F4F3F3;
+  background-color:white;
 }
 
-/* comments */
- textarea.form-control {
-   height: 120px;
- }
 
- .pro-comment-btn .btn{
-   width: 200px;
- }
-
- .comment-time {
-   margin-top: 30px;
-   padding-left: 220px;
-   font-size: 50%;
- }
-
-/* login/signup page*/
-.login-page{
-  width: 400px;
-  border: 1px solid #828589;
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  position: absolute;
-  top: 200px;
-  right: 400px;
-}
-.login-page-photo {
-  background-image: url('http://cp1.douguo.net/upload/caiku/4/f/e/yuan_4fbd41ad3f86a126d8e66f8ff386b42e.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 800px;
-  margin-top: -100px;
-}
-.form-actions .btn-danger {
-  width: 300px;
-}
 
 /* universe */
 html,body{

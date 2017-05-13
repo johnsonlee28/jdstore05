@@ -1,10 +1,10 @@
 
 <div class="row masonry-container transitions-enabled">
     <% @products.each do |product| %>
-      <div class="box panel panel-default">
+      <div class="box panel panel-default col-xs-6">
         <%= link_to product_path(product) do %>
           <% if product.photos.present? %>
-            <%= image_tag(product.photos[0].avatar.thumb.url)%>
+            <%= image_tag(product.image)%>
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
           <% end %>

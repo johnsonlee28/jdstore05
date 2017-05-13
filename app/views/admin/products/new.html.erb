@@ -21,10 +21,15 @@
       </div>
 
       <div class="group">
+          <%= f.label :首页展示图 %>
+          <%= f.file_field :image, as: :file %>
+      </div>
+
+      <div class="group">
         <%#= f.input :image, as: :file %>
         <%= f.label :产品展示图%>
         <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
-      </div>
+      </div><br>
       <div class="group">
         <%= f.input :detail, :label => "广告词"%>
       </div>
