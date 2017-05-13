@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
+//= require jquery.turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require social-share-button
+//= require masonry/jquery.masonry
 //= require_tree .
 
 /* product-preview */
