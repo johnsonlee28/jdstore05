@@ -39,3 +39,10 @@ $(document).on('mouseover', '.magnifier-thumb-wrapper', function (e) {
 $(document).on('mouseout', '.magnifier-thumb-wrapper', function (e) {
     $('#preview').css('visibility', 'hidden')
 })
+
+
+// 详情菜单栏切换
+$(document).on('click', '.productDetail-tabList-tab', function () {
+  $(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
+  $('.productDetail-content').eq($(this).index()).show().siblings().hide()
+})

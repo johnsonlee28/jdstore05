@@ -22,6 +22,37 @@
 @import "products";
 @import "social-share-button";
 
+/* product-index*/
+.product-index-page {
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+.product-item-pic {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+
+}
+.product-item-pic:hover {
+  border: 1px solid #F4F3F3;
+  border-radius:5px;
+  transition: box-shadow 0.5s;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+}
+
+.product-item-pic img {
+  width: 100%
+}
+.product-item-pic img.thumbnail {
+border: none;
+}
+
+
 /*背景颜色*/
 .all-background {
   background-color: #F4F3F3;
