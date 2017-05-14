@@ -20,26 +20,27 @@
         <%= f.input :price, :label => "价格" %>
       </div>
 
-      <div class="group pb10">
+      <div class="group">
           <%= f.label :•首页图 %>
           <%= f.file_field :image, as: :file %>
       </div>
 
-      <% if @product.photos.present? %>
-        <div>目前商品图</div>
-        <% @product.photos.each do |p|%>
-          <div class="pb10" style="float:left">
-            <%= image_tag p.avatar.thumb.url, class:"thumbnail"%>
-          </div>
-        <% end %>
-      <% end %>
 
-      <div class="group" style="clear:both;">
-        <%= f.label :•商品图%>
+      <div class="group" >
+        <%= f.label :•产品展示图%>
         <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
       </div>
 
-      <div class="group">
+            <% if @product.photos.present? %>
+              <div>目前商品图</div>
+              <% @product.photos.each do |p|%>
+                <div class="pb10" style="float:left">
+                  <%= image_tag p.avatar.thumb.url, class:"thumbnail"%>
+                </div>
+              <% end %>
+            <% end %>
+
+      <div class="group" >
         <%= f.input :detail, label: "•商品广告词"%>
       </div>
 
@@ -53,12 +54,15 @@
         <%= f.label :•产品介绍图%>
         <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]"%>
       </div>
+
       <div class="group">
-        <%= f.select :category_id, @categories, :class => "form-control" %>
+        <%= f.label :•品类 %>
+        <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id]}, {} , :class => "form-control" %>
       </div>
 
-      <%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
-
+      <div class="group">
+        <%= f.submit "Submit", data: {disable_with: "Submitting..."}, class:"btn btn-success" %>
+      </div>
     <% end %>
 
 </div>

@@ -21,7 +21,7 @@
       </div>
 
       <div class="group">
-          <%= f.label :首页展示图 %>
+          <%= f.label :首页图 %>
           <%= f.file_field :image, as: :file %>
       </div>
 
@@ -38,10 +38,11 @@
         <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]" %>
       </div>
       <div class="group">
-        <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别")%>
+        <%= f.label :•品类%>
+        <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id]}, {} , :class => "form-control" %>
       </div>
 
-      <%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+      <%= f.submit "Submit", data: {disable_with: "Submitting...", class:"btn btn-success"} %>
 
     <% end %>
   </div>
