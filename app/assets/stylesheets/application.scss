@@ -39,7 +39,7 @@ html,body{
   font-family:"Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
   font-size:15px;
   line-height: 1.5;
-  background-color: rgb(255,255,255);
+  background-color: white;
   font-weight: 200;
 
 }
@@ -59,7 +59,7 @@ html,body{
 }
 
 #navigation{
-  background-color:#FAFAFA;
+  background-color:#4E342E;
   border-radius: 0px;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
@@ -73,6 +73,26 @@ html,body{
 #navigation:hover{
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > .active > a{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > .active > a:hover{
+  color:#9E9E9E;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color:#9E9E9E;
 }
 
 #footer{
