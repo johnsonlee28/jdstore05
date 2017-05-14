@@ -1,25 +1,17 @@
-<div class="container">
-  <div class="product-index-page">
-    <div class="row">
+
+<div class="row masonry-container transitions-enabled">
     <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
+      <div class="box panel panel-default col-xs-6">
         <%= link_to product_path(product) do %>
-          <div class="product-item-pic">
-            <% if product.photos.present? %>
-              <%= image_tag(product.photos[0].avatar.thumb.url, class:"thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
-            <% end %>
+          <% if product.photos.present? %>
+            <%= image_tag(product.image)%>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
           <% end %>
-            <div class="pro-title">
-              <%= product.title %> ￥ <%= product.price %>
-            </div>
-            <div class="pro-comment-count">
-              <small>已有<%= product.comments.count%>条评论</small>
-            </div>
-          </div>
+        <% end %>
+        <div class="panel-body">
+          <%=  product.description %>
+        </div>
       </div>
     <% end %>
-    </div>
-  </div>
 </div>
