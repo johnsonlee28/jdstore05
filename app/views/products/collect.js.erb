@@ -1,0 +1,2 @@
+str = "<%=j render :partial => "collect", :locals => { :product => @product} %>";
+$("#collect-<%= @product.id %>").html(str);

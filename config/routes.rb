@@ -19,10 +19,17 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :buynow
+      post "like" => "products#like"
+      post "unlike" => "products#unlike"
+      post "collect" => "products#collect"
+      post "uncollect" => "products#uncollect"
     end
     collection do
-      get :search 
+      get :search
     end
+
+    resources :comments
   end
 
   resources :carts do
@@ -46,4 +53,6 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
+
+
 end

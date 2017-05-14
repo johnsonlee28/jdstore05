@@ -1,0 +1,68 @@
+
+    <% if current_user %>
+      <% if current_user.avatar.present? %>
+        <%= image_tag(current_user.avatar.url(:thumb), class:"img-circle",width:"40",height:"40") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/50x50",class:"img-circle") %>
+      <% end %>
+      <div class="user-name">
+        <% if current_user.name.present?%>
+          <%= current_user.name %>
+        <% else %>
+          <%= current_user.email%>
+        <% end %>
+      </div>
+    <% end %>
+
+
+      <%= simple_form_for [@product, @comment] do |f|%>
+      <div class="pro-comment">
+        <%= f.input :description,label: "写下你的评论", placeholder: "说点什么..."%>
+      </div>
+      <div class="pro-comment-pic">
+        <%= f.label :上传图片 %><br>
+        <%= f.file_field :avatar, :multiple => true, name: "graphics[avatar][]"%>
+      </div>
+      <div class="pro-comment-btn">
+        <%= f.submit "提交", class: "btn btn-danger"%>
+      </div>
+      <% end %>
+
+
+  <div class="comment-all">
+    <table class="table">
+      <thead>
+        <% @comments.each do |comment|%>
+        <tr>
+          <td>
+            <% if comment.user.avatar.present? %>
+              <%= image_tag(comment.user.avatar.url(:thumb), class:"img-circle",width:"40",height:"40") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/50x50",class:"img-circle") %>
+            <% end %>
+            <br>
+            <% if comment.user.name.present?%>
+              <%= comment.user.name%>
+            <% else %>
+              <%= comment.user.email%>
+            <% end %>
+
+          </td>
+          <td width=80%>
+            <%=simple_format (comment.description)%>
+            <% if comment.graphics.present? %>
+                <% comment.graphics.each_with_index do |p, index| %>
+                    <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
+                <% end %>
+              <% end %>
+              <br>
+              <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
+            <div class="comment-time">
+              发布于 ： <%= comment.created_at.to_s(:long)%>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </thead>
+    </table>
+  </div>

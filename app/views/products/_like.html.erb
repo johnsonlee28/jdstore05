@@ -1,0 +1,6 @@
+<span style="font-size:12px;">人气指数 <span class="badge"><%= @product.liked_users.count + @product.collected_users.count %> </span></span>
+<% unless product.find_like(current_user) %>
+  <%= link_to like_product_path(product), :method => :post, :remote => true, :class => "circle-thumb" do %>
+      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+  <% end %>
+<% end %>

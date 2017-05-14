@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
  */
@@ -19,15 +20,33 @@
 @import "font-awesome";
 @import "footer";
 @import "navbar";
+@import "products";
+@import "social-share-button";
+@import "masonry/fluid";
+
+
+/*背景颜色*/
+.all-background {
+  // background-color: #F4F3F3;
+  background-color:white;
+}
+
+
 
 /* universe */
 html,body{
-  height: 100%
+  height: 100%;
+  font-family:"Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+  font-size:15px;
+  line-height: 1.5;
+  background-color: white;
+  font-weight: 200;
+
 }
 
 #header{
-  height: 100px;
   width: 100%;
+
 }
 
 #holder{
@@ -39,6 +58,43 @@ html,body{
   padding-bottom: 100px;
 }
 
+#navigation{
+  background-color:#4E342E;
+  border-radius: 0px;
+  transition: all 0.6s;
+  -webkit-transition: all 0.6s;
+  -webkit-transition:all 0.6s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.6s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.6s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.6s ease-in-out; /*让「IE浏览器」支持这个属性*/
+
+}
+
+#navigation:hover{
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > .active > a{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > .active > a:hover{
+  color:#9E9E9E;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color:#FF5722;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color:#9E9E9E;
+}
+
 #footer{
   bottom: 0;
   height: 100px;
@@ -46,6 +102,8 @@ html,body{
   position: absolute;
   right: 0;
 }
+
+
 
 /* search */
 #search-id{

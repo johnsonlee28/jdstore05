@@ -21,10 +21,27 @@
       </div>
 
       <div class="group">
-        <%= f.input :image, as: :file %>
+          <%= f.label :首页图 %>
+          <%= f.file_field :image, as: :file %>
       </div>
 
-      <%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+      <div class="group">
+        <%= f.label :产品展示图%>
+        <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
+      </div><br>
+      <div class="group">
+        <%= f.input :detail, :label => "广告词"%>
+      </div>
+      <div class="group">
+        <%= f.label :产品介绍图 %><br>
+        <%= f.file_field :avatar, :multiple => true, name: "prints[avatar][]" %>
+      </div>
+      <div class="group">
+        <%= f.label :•品类%>
+        <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id]}, {} , :class => "form-control" %>
+      </div>
+
+      <%= f.submit "Submit", data: {disable_with: "Submitting...", class:"btn btn-success"} %>
 
     <% end %>
   </div>

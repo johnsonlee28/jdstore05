@@ -1,3 +1,459 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* product-index */
+.masonry-container{
+  margin:0 auto;
+}
+
+.box{
+  margin:5px;
+  max-width:214px;
+  padding:5px;
+}
+
+.box img{
+  width:100%;
+}
+
+.box:hover{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/* product-new-edit-page */
+.group{
+  clear:both;
+  padding:10px 0px;
+}
+
+/* product-show-page-content */
+
+.product-category{
+  font-size: 14px;
+  padding-top:10px;
+  padding-bottom: 0px;
+  color:#757575;
+  a{
+    color:#757575;
+  }
+
+  a:link{
+    color:#757575;
+    text-decoration: none;
+  }
+  a:hover{
+    color:#757575;
+    text-decoration: none;
+  }
+  a:visited{
+    color:#757575;
+  }
+}
+
+.product-show-page {
+  margin-top: 5px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+
+.comment-form {
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+.comment-all {
+  margin-top: 15px;
+   padding: 15px;
+   border: none;
+   transition: box-shadow 0.5s;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+   background-color: #fff;
+   border-radius: 4px;
+}
+/*.product-content{
+  //width: 950px;
+  background: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  padding-top:20px;
+  //border: 1px solid #BDBDBD;
+}
+*/
+
+/* product preview tab method sideback */
+// .preview {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -webkit-flex-direction: column;
+//       -ms-flex-direction: column;
+//           flex-direction: column;
+//
+// }
+//
+// .preview-pic {
+//   -webkit-box-flex: 1;
+//   -webkit-flex-grow: 1;
+//       -ms-flex-positive: 1;
+//           flex-grow: 1;
+//   height: 500px;
+//   img{
+//     width: 100%;
+//   }
+// }
+//
+// .preview-thumbnail.nav-tabs {
+//   border: none;
+//   margin-top: 15px; }
+//
+// .preview-thumbnail.nav-tabs li {
+//   width: 18%;
+//   margin-right: 2.5%;
+// }
+// .preview-thumbnail.nav-tabs li img {
+//   max-width: 100%;
+//   display: block;
+//   border: 1px solid #ddd;
+// }
+// .preview-thumbnail.nav-tabs li a {
+//   padding: 0;
+//   margin: 0;
+// }
+// .preview-thumbnail.nav-tabs li:last-of-type {
+//   margin-right: 0;
+// }
+//
+// .tab-content {
+//   overflow: hidden;
+//   padding-top: 15px;
+// }
+
+/* product-edit */
+
+.pro-image{
+  width:200px;
+  height:200px;
+  overflow:hidden;
+}
+
+
+/* multi photos for product-show-page */
+#preview{
+
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  img{
+    width:100%;
+  }
+}
+.intro-preview {
+	margin-top: 10px;
+	.intro-preview-item {
+		padding: 1px;
+		margin-right: 0px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			width: 72px;
+			height: 72px;
+		}
+	}
+	.intro-preview-item {
+		border-color: #DB3652;
+	}
+}
+.fl {
+  display: inline-block;
+  margin-left: 5px;
+  border: 2px;
+  border-color: red;
+}
+.intro-preview li {
+
+  border-radius:5;
+  transition: box-shadow 0.5s;
+  overflow: hidden;
+  img{
+      transition: all 0.8s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+      -webkit-transition: all 0.8s;
+      -webkit-transition:all 0.8s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+      -moz-transition:all 0.8s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+      -o-transition:all 0.8s ease-in-out; /*让「safari」支持属性*/
+      -ms-transition:all 0.8s ease-in-out; /*让「IE浏览器」支持这个属性*/
+  }
+}
+.intro-preview li:hover {
+ border: 1px solid #f4511e;
+ img{
+   transform: scale(1.2); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
+   -webkit-transform: scale(1.2);
+   -moz-transform: scale(1.2);
+   -o-transform: scale(1.2);
+   -ms-transform: scale(1.2);
+ }
+}
+
+ .productlist-item{
+   width: 230px;
+  height: 300px;
+  background: #fff;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+  position: relative;
+  top: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+ }
+ .productlist-item img {
+   margin-left: 15px;
+   padding-top: 8px;
+   border-radius: 0 !important;
+ }
+
+/* product-info */
+.product-title{
+  float:left;
+  font-size:28px;
+  font-weight:700;
+  line-height:20px;
+  padding-top:6px;
+  box-sizing: border-box;
+  display:block;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+
+.like{
+  float:right;
+  display: inline-block;
+  margin-top:3px;
+  .circle-thumb{
+    color:red;
+  }
+}
+
+
+.product-subdesc{
+  clear:both;
+  font-size:18px;
+  padding-bottom:10px;
+  padding-top:13px;
+  line-height: 28px;
+  box-sizing: border-box;
+  display: block;
+  color:#999;
+}
+
+.price-promo{
+  background-color: #f5f3ef;
+  border-top:1px dotted #dedede;
+  border-bottom:1px dotted #dedede;
+  padding:0 0 16px;
+  height:120px;
+  box-sizing: border-box;
+  display: block;
+  word-wrap: break-word;
+  word-break:break-all;
+  color:#666;
+  font-size:18px;
+  font-family: "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+
+}
+
+.label-1{
+  line-height:30px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:0px;
+  font-weight: lighter;
+}
+
+.label-2{
+  line-height:14px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:3px;
+  clear:both;
+  font-weight:lighter;
+}
+.label-3{
+  line-height:45px;
+  width:54px;
+  float:left;
+  color:#666;
+  margin-top:3px;
+  clear:both;
+  font-weight:lighter;
+
+}
+
+.label-4{
+  line-height:40px;
+  float:left;
+  color:#666;
+  display: inline-block;
+  font-weight:lighter;
+  font-size: 12px;
+  margin-top:8px;
+  vertical-align: super;
+}
+
+
+.rmb{
+  margin-left:10px;
+  line-height: 30px;
+  color:#d7282d;
+  font-size: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.product-retail-price{
+  font-size: 28px;
+  line-height: 30px;
+  margin-left:0px;
+  color:#d7282d;
+
+}
+
+.icon-normal-point{
+  margin:4px 4px 0 0;
+  height:3px;
+  width:3px;
+  display:inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  font-size: 12px;
+  word-spacing: normal;
+  letter-spacing: normal;
+  font-style:normal;
+  line-height: 12px;
+  color:#666;
+  white-space: nowrap;
+  background-image: url(http://mimg.127.net/hxm/yanxuan-web/p/20150730/style/img/x1/icon-normal-sc14c86462d-ce0bea8855.png);
+  background-repeat: no-repeat;
+
+}
+.product-size,.add-cart-like{
+  clear:both;
+  display: block;
+  padding:5px 0px 20px;
+}
+
+.buynow{
+  margin-top: 10px;
+  display: inline-block;
+  padding:0 5px 0 10px;
+  span{
+    font-size:16px;
+  }
+}
+
+.add_to_cart{
+  margin-top: 10px;
+  display: inline-block;
+  padding:0 0 0 15px;
+
+  span{
+    font-size:16px;
+  }
+}
+
+
+.collect-and-share{
+  border-radius: 8px;
+  padding:0px 3px 0px;
+  margin-top:10px;
+  a{
+    padding:7px;
+  }
+}
+
+
+/*评论图片*/
+ .commentImage {
+	width: 80px;
+  height: 80px;
+	padding: 2px;
+	margin-top: 10px;
+	margin-right: 2px;
+	&.selected {
+		border: 1px solid #d32048;
+	}
+}
+
+
+
+.social-share{
+  border-top:1px dotted #dedede;
+  clear:both;
+  display:block;
+  padding-top:10px;
+  .share-lists{
+    padding:auto;
+  }
+  .list{
+    padding-top:5px;
+
+  }
+
+}
+
+/* comments */
+ textarea.form-control {
+   height: 120px;
+ }
+
+ .pro-comment-btn .btn{
+   width: 200px;
+ }
+
+ .comment-time {
+   margin-top: 30px;
+   padding-left: 220px;
+   font-size: 50%;
+ }
+
+
+/*评论选项*/
+.productDetail-tabList {
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.productDetail-tabList-tab {
+	cursor: pointer;
+	height: 35px;
+	line-height: 35px;
+	border-right: 1px solid #D8D8D8;
+}
+
+.productDetail-tabList-activeTab {
+	background: #F4F3F3;
+}
+
+.productDetail-content {
+	display: none;
+  //text-align: left;
+}
+
+.productDetail-content .productDetail-introImg img {
+	width: 700px;
+}

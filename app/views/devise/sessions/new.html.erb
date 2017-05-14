@@ -1,15 +1,24 @@
-<h2>Log in</h2>
-
+<div class="row">
+  <div class="login-page-photo">
+    <h1>welcome</h1>
+    <p>这里是slogan</p>
+  </div>
+</div>
+<div class="login-page">
+<h2 class="text-center">账户登录</h2>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
+    <%= f.input :email,label: "邮箱", required: false, autofocus: true %>
+    <%= f.input :password,label: "密码", required: false %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "登录" ,class: "btn btn-danger"%>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<br>
+<div class="text-center">
+  <%= render "devise/shared/links" %>
+</div>
+</div>
