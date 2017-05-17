@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
     @prints = @product.prints.all
     @comment = Comment.new
     @comments = @product.comments
+
+    if @comments.blank?
+       @avg_comment = 0
+     else
+       @avg_comment = @comments.average(:rating).round(2)
+     end 
   end
 
   def add_to_cart
