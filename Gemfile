@@ -50,6 +50,7 @@ gem "social-share-button"
 gem 'masonry-rails', '~> 0.2.0'
 gem 'jquery-turbolinks'
 gem 'bullet'
+gem 'figaro'
 
 
 group :development, :test do
