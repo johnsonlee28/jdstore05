@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subs
+  resources :subscribers
   devise_for :views
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :subs
+
 
   resources :products do
     member do
