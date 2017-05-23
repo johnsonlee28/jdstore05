@@ -28,6 +28,17 @@
   }
 }
 
+.navbar-header{
+  display: inline-block;
+  margin-top: -15px;
+  a{
+    font-size: 1.5em;
+    img{
+      padding-bottom:5px;
+    }
+  }
+}
+
 /* login/signup page*/
 .login-page{
   width: 400px;
