@@ -1,3 +1,72 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.cartProducts{
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top:50px;
+}
+
+.cartProduct-list{
+  border:1px solid #e8e8e8;
+}
+
+div.cartProducts-title{
+  background-color: #EBEEF3;
+}
+
+label.cartProducts-title-msg,label.cartProducts-title-price,label.cartProducts-title-quantity,label.cartProducts-title-total,label.cartProducts-title-operation{
+  height:45px;
+  line-height: 45px;
+  font-weight:400;
+  width:19%;
+  text-align: center;
+  margin-left: 3px;
+}
+
+
+.cartProduct{
+  background-color:#fff;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.cartProducts-title{
+  border:1px solid #e8e8e8;
+
+}
+
+.cartproduct-price, .cartproduct-quantity, .cartproduct-removal, .cartproduct-line-price{
+  width: 19%;
+  text-align:center;
+  height:112px;
+  color: black;
+  display: inline-block;/* 确保同一行内展示 */
+}
+
+.cartProduct-image{
+  width: 19%;
+  text-align:center;
+  height:112px;
+  color: black;
+  display: inline-block;/* 确保同一行内展示 */
+
+}
+.checkout{
+  background-color: #EBEEF3;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:20px;
+
+}
+.total-price{
+  float:right;
+  font-size: 1.5em;
+  margin-right:20px;
+  margin-top:10px;
+  font-weight: 400;
+}
