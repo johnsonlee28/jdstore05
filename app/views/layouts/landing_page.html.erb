@@ -11,20 +11,9 @@
   <body>
     <div id="holder">
       <div class="container-fluid all-background">
-        <div id="header" >
-          <div class="row">
-            <div class="navbar-fixed">
-              <%= render 'common/navbar' %>
-            </div>
-            <%= render 'common/flashes' %>
-          </div>
-        </div>
-        <div id="body">
+        <div>
           <%= yield %>
         </div>
-      </div>
-      <div id="footer">
-        <%= render 'common/footer' %>
       </div>
     </div>
   </body>
