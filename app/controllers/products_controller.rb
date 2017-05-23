@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
        @avg_comment = 0
      else
        @avg_comment = @comments.average(:rating).round(2)
-     end 
+     end
   end
 
   def add_to_cart

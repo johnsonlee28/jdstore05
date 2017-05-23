@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'products#index'
+  root 'landing_page#index'
+
+  resources :landing_page
+  get 'home' => 'products#index'
 
   namespace :admin do
     resources :products
