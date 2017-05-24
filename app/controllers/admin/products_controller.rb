@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
 
 
   def index
-    @products = Product.all
+    @products = Product.includes(:photos).all
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
-    if @product.save
+    if @product.update(product_params)
       if params[:photos] != nil
         params[:photos]['avatar'].each do |a|
           @photo = @product.photos.create(:avatar => a )

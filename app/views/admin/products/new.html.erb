@@ -41,7 +41,7 @@
         <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id]}, {} , :class => "form-control" %>
       </div>
 
-      <%= f.submit "Submit", data: {disable_with: "Submitting...", class:"btn btn-success"} %>
+      <%= f.submit "Submit", data: {disable_with: "Submitting..."}, class:"btn btn-success" %>
 
     <% end %>
   </div>
