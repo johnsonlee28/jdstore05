@@ -25,6 +25,22 @@
 @import "masonry/fluid";
 @import "carts";
 
+.index {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  background-color: #d8c095;
+  margin-bottom: 200px;
+  .fa-arrow-up {
+    color: #fff;
+    margin-left: 13px;
+    line-height: 40px;
+
+  }
+}
 
 /*背景颜色*/
 .all-background {
