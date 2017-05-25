@@ -57,6 +57,8 @@
            <p class="product-subdesc">
              <%= @product.description %>
            </p>
+           <p class="rating-sweet">甜度: <div class="star-rating" data-score= <%= @product.rating %>></div>  </p>
+
            <div class="price-promo">
               <div class="product-price mt10">
                <span class="label label-1 ml2">售价 </span>
@@ -81,6 +83,7 @@
                 <span class="label label-3">库存</span>
                 <span class="label label-4"><%= @product.quantity %></span>
               </div>
+
             </div>
               <div class="row">
                 <div class="add-cart-like col-md-12">
@@ -123,31 +126,113 @@
 
 <!--商品评论-->
 <div class="container">
-  <div class="comment-form">
-    <ul class="productDetail-tabList bg-gray clearfix">
-      <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
-        商品详情
-      </li>
-      <li class="productDetail-tabList-tab fl pl50 pr50">
-        商品评价(<%= @product.comments.count%>)
-      </li>
-    </ul>
-    <div class="productDetail-contentWrap">
-      <div class="productDetail-content pt20 tc pb20" style="display: block;">
-        <div class="productDetail-introImg">
-          <% if @prints.present? %>
-            <% @prints.each_with_index do |p, index| %>
-                <%= image_tag p.avatar.medium.url %>
+  <div class="row">
+    <div class="col-md-3 col-xs-3">
+      <div class="comment-form">
+        <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
+      <hr />
+        <% Product.limit(5).sort_by{|product| -product.likes.count}.each do |product| %>
+          <div class="box panel panel-default">
+            <%= link_to product_path(product) do %>
+              <% if product.photos.present? && product.category_id == @product.category_id%>
+                <%= image_tag(product.photos[0].avatar.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
             <% end %>
-          <% else %>
-              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-          <% end %>
-        </div>
-        <p class="mt20 mb20"><%=simple_format(@product.detail)%></p>
+            <div class="fig" >
+              <p class="actions text-center">
+                <span><%= product.title%></span>
+                <% if product.quantity.present? && product.quantity > 0 %>
+                  <%= link_to add_to_cart_product_path(product), class: "add-to-cart ",:method => :post do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <% end %>
+                <% else %>
+                  已销售一空，无法购买
+                <% end %>
+              </p>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <div class="productDetail-content pt30 tc pb20">
-      <%= render "comment"%>
+    </div>
+
+    <div class="col0-md-9 col-xs-9">
+      <div class="comment-form">
+        <ul class="productDetail-tabList bg-gray clearfix">
+          <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
+            商品详情
+          </li>
+          <li class="productDetail-tabList-tab fl pl50 pr50">
+            商品评价(<%= @product.comments.count%>)
+          </li>
+        </ul>
+        <div class="productDetail-contentWrap">
+          <div class="productDetail-content pt20 tc pb20" style="display: block;">
+            <div class="productDetail-introImg">
+              <% if @prints.present? %>
+                <% @prints.each_with_index do |p, index| %>
+                    <%= image_tag p.avatar.medium.url %>
+                <% end %>
+              <% else %>
+                  <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            </div>
+            <p class="mt20 mb20"><%=simple_format(@product.detail)%></p>
+          </div>
+        <div class="productDetail-content pt30 tc pb20">
+          <%= render "comment"%>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
-  </div>
+
 </div>
+
+<!--back to top-->
+<footer>
+  <div class="index">
+    <a href="#header" title="back top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+  </div>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#header']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+
+
+$('.star-rating').raty({
+  path: '/ratyrate/',
+  readOnly: true,
+  score: function(){
+    return $(this).attr('data-score');
+  }
+});
+
+</script>

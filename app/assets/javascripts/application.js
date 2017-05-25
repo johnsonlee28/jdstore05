@@ -48,3 +48,32 @@ $(document).on('click', '.productDetail-tabList-tab', function () {
   $(this).addClass('productDetail-tabList-activeTab').siblings().removeClass('productDetail-tabList-activeTab')
   $('.productDetail-content').eq($(this).index()).show().siblings().hide()
 })
+
+
+/* scroll effect  */
+(function ($) {
+  $(document).ready(function(){
+    $('.index').hide();
+    $(function () {
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > 800) {
+                $('.index').fadeIn();
+            } else {
+                $('.index').fadeOut();
+            }
+        });
+    });
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.animated').fadeOut();
+            } else {
+                $('.animated').fadeIn();
+            }
+        });
+    });
+
+});
+  }(jQuery));

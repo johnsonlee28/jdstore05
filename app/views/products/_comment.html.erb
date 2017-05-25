@@ -1,5 +1,5 @@
      <div class="total-star" style="margin-bottom: 20px;">
-       好评度：<div class="star-rating" data-score= <%= @avg_comment %>></div>
+       好评度：<div class="star-rating" data-score= <%= @avg_comment %>></div><hr>
      </div>
     <% if current_user %>
       <% if current_user.avatar.present? %>
@@ -18,14 +18,14 @@
 
 
       <%= simple_form_for [@product, @comment] do |f|%>
+      <p>写下你的评论</p>
       <div class="pro-raing" style="margin: 20px;">
-        <div id="star-rating"></div>
+        <div id="star-rating">产品满意度: </div>
       </div>
       <div class="pro-comment">
-        <%= f.input :description,label: "写下你的评论", placeholder: "说点什么..."%>
+        <%= f.input :description, placeholder: "说点什么..."%>
       </div>
       <div class="pro-comment-pic">
-        <%= f.label :上传图片 %><br>
         <%= f.file_field :avatar, :multiple => true, name: "graphics[avatar][]"%>
       </div>
       <div class="pro-comment-btn">

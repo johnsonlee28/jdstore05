@@ -1,17 +1,75 @@
-
-<div class="row masonry-container transitions-enabled">
-    <% @products.each do |product| %>
-      <div class="box panel panel-default col-xs-6">
-        <%= link_to product_path(product) do %>
-          <% if product.photos.present? %>
-            <%= image_tag(product.image)%>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+<div class="container">
+  <div class="classification">
+    <ul class="fl orderList">
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == "by_price" %> " ><%= link_to("价钱", products_path(:order => "by_price")) %><i class="fa fa-arrow-down" ></i></li>
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_fans'%>" ><%= link_to("喜欢数量", products_path(:order => "by_fans")) %><i class="fa fa-arrow-down"></i></li>
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if !params[:order]%>" ><%= link_to("上架时间", products_path) %><i class="fa fa-arrow-down"></i></li>
+    </ul>
+  </div>
+  <div class="row masonry-container transitions-enabled">
+      <% @products.each do |product| %>
+        <div class="box panel panel-default col-xs-6">
+          <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.image)%>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
           <% end %>
-        <% end %>
-        <div class="panel-body">
-          <%=  product.description %>
+
+          <div class="panel-body">
+            <%=  product.title %><br>
+            ￥：<%= product.price%><br>
+            已有<%=  product.comments.count%>条评论
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
 </div>
+<footer>
+  <div class="index">
+    <% Category.all.each do |category| %>
+      <%= link_to category.name, products_path(category: category.name) %>
+    <% end %>
+    <a href="#header" title="back top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+  </div>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#header']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+
+    $('.star-rating').raty({
+      path: '/ratyrate/',
+      readOnly: true,
+      score: function(){
+        return $(this).attr('data-score');
+      }
+    });
+
+</script>
