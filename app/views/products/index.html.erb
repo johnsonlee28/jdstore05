@@ -11,16 +11,17 @@
         <div class="box panel panel-default col-xs-6">
           <%= link_to product_path(product) do %>
             <% if product.photos.present? %>
-              <%= image_tag(product.photos.first.avatar.thumb.url)%>
+              <%= image_tag(product.image)%>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
             <% end %>
           <% end %>
+
           <div class="panel-body">
-            <%=  product.description %>
+            <%=  product.title %><br>
+            ￥：<%= product.price%><br>
+            已有<%=  product.comments.count%>条评论
           </div>
-          <p class="text-center"><%= product.price%></p>
-          <p>已有<%=  product.comments.count%>条评论</p>
         </div>
       <% end %>
   </div>
@@ -62,4 +63,13 @@ $(document).ready(function(){
     } // End if
   });
 })
+
+    $('.star-rating').raty({
+      path: '/ratyrate/',
+      readOnly: true,
+      score: function(){
+        return $(this).attr('data-score');
+      }
+    });
+
 </script>

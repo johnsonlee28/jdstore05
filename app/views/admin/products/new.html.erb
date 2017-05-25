@@ -19,6 +19,9 @@
       <div class="group">
         <%= f.input :price, :label => "价格" %>
       </div>
+      <div class="group">
+          <div id="star-rating">甜度：</div>
+      </div>
 
       <div class="group">
           <%= f.label :首页图 %>
@@ -46,3 +49,10 @@
     <% end %>
   </div>
 </div>
+
+<script>
+$('#star-rating').raty({
+  path: '/ratyrate/',
+  scoreName: 'comment[rating]'
+});
+</script>

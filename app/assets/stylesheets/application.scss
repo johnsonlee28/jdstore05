@@ -24,6 +24,13 @@
 @import "social-share-button";
 @import "masonry/fluid";
 @import "carts";
+//甜度星星
+.rating-sweet {
+  margin-bottom: -25px;
+}
+div.star-rating {
+  margin-left: 40px;
+}
 
 
 /*排序*/
@@ -106,7 +113,7 @@ html,body{
 }
 
 #body{
-  padding-bottom: 100px;
+  //padding-bottom: 100px;
 }
 
 #navigation{
