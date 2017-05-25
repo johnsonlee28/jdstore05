@@ -85,8 +85,12 @@
               <div class="row">
                 <div class="add-cart-like col-md-12">
                     <div class="add_to_cart col-md-6">
-                      <%= link_to add_to_cart_product_path(@product), method: :post, class:"btn btn-block btn-danger" do %>
+                      <% if @product.quantity.present? && @product.quantity > 0 %>
+                        <%= link_to add_to_cart_product_path(@product), method: :post, class:"btn btn-block btn-danger" do %>
                          <i class="fa fa-shopping-cart"></i> <span class="add">加入购物车</span>
+                        <% end %>
+                      <% else %>
+                        已销售一空
                       <% end %>
                     </div>
 
