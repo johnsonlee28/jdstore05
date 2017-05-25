@@ -24,28 +24,48 @@
 @import "social-share-button";
 @import "masonry/fluid";
 @import "carts";
-
+//back to top
 .index {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
+  display: none;
   position: fixed;
-  bottom: 200px;
-  right: 30px;
-  background-color: #d8c095;
-  margin-bottom: 200px;
+  width: 50px;
+  background: #F6F9FA;
+  top: 50%;
+  left: 50%;
+  margin-left: -638px;
+  margin-top: -100px;
+  border-radius: 2px;
   .fa-arrow-up {
-    color: #fff;
+    color: #f4b642;
     margin-left: 13px;
     line-height: 40px;
 
   }
 }
 
+.index a {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  line-height: 18px;
+  border-bottom: 1px solid #DDDDDD;
+  -webkit-transition:all 0.1s ease-in-out;
+  -moz-transition:all 0.1s ease-in-out;
+  -o-transition:all 0.1s ease-in-out;
+  -ms-transition:all 0.1s ease-in-out;
+  transition:all 0.1s ease-in-out;
+}
+
+.index a:hover {
+  color: #f4b642;
+  background: #D32048;
+}
+
+
 /*背景颜色*/
 .all-background {
-  // background-color: #F4F3F3;
-  background-color:white;
+   background-color: #F4F3F3;
+  //background-color:white;
 }
 
 
@@ -116,8 +136,9 @@ html,body{
   bottom: 0;
   height: 100px;
   left: 0;
-  position: absolute;
+  position: static;
   right: 0;
+  margin-top: -20px;
 }
 
 
