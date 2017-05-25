@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div class="product-category">
+  <div class="product-category col-md-12">
     <%= link_to("所有商品", products_path)%> >
       <%= link_to products_path(category: @product.category.name) do %>
           <% @product.category.try(:name) %>
