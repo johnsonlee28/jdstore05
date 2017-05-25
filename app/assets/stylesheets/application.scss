@@ -24,6 +24,20 @@
 @import "social-share-button";
 @import "masonry/fluid";
 @import "carts";
+
+
+/*排序*/
+.classification {
+  background: #fff;
+  height: 44px;
+  line-height: 44px;
+}
+.orderList-orderItem {
+  cursor: pointer;
+}
+.orderList-activeItem a {
+  color: #d32048;
+}
 //back to top
 .index {
   display: none;
