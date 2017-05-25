@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore backend panel</title>
+    <title>MumCook backend panel</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'common/navbar' %>
-       <div class="row">
-         <div class="col-md-2">
+    <div class="container-fluid">
+      <div class="row">
+        <%= render 'common/navbar' %>
+      </div>
+       <div class="row pt60">
+         <div class="col-md-2 mt50">
            <ul class="nav nav-pills nav-stacked" style="max-width:300px;">
              <li><%= link_to("Products", admin_products_path) %></li>
            </ul>

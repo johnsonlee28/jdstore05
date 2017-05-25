@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default" id="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">JDstore</a>
+      <a class="navbar-brand" href="/"><b><img src='<%= image_url 'bear.png' %>'>MumCook</b></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
@@ -9,13 +9,28 @@
         <li class="active">
           <%= link_to("Products", products_path) %>
         </li>
-        <li><%= link_to("Orders", admin_orders_path) %></li>
+        <% if current_user && current_user.admin? %>
+          <li><%= link_to("Orders", admin_orders_path) %></li>
+        <% end %>
 
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Category <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% Category.all.each do |category|%>
+              <li>
+                <%= link_to category.name, products_path(category: category.name), class: "link"%>
+              </li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
       <div class="nav navbar-nav navbar-left">
         <%= form_tag search_products_path, method: :get do %>
           <div class="input-group" id="search-id">
-            <input type="text" class="form-control" name="q" value="<%= params[:q]%>" placeholder="输入产品信息">
+            <input type="text" class="form-control" name="q" value="<%= params[:q]%>" placeholder="press product info">
             <div class="input-group-btn">
               <button type="submit" class="btn btn-default">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -27,31 +42,29 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
-            购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
+            <i class="fa fa-shopping-cart"></i> <span class="badge"> <%= current_cart.products.count %> </span>
           <% end %>
         </li>
         <% if !current_user %>
-          <li><%= link_to("注册", new_user_registration_path) %></li>
-          <li><%= link_to(content_tag(:i, '登入', class:'fa fa-sign-in'), new_user_session_path) %></li>
+          <li><%= link_to(content_tag(:i, "Register", class:'fa fa-check-square-o'), new_user_registration_path) %></li>
+          <li><%= link_to(content_tag(:i, 'Login', class:'fa fa-sign-in'), new_user_session_path) %></li>
         <% else %>
-          <li class="round-image-50">
-            <% if current_user.avatar.present? %>
-              <%= image_tag(current_user.avatar.url(:thumb)) %>
-            <% else %>
-              <%= image_tag("http://placehold.it/30x30") %>
-            <% end %>
-          </li>
           <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-              <b class="caret"></b>
-            </a>
+            <button class="btn btn-default dropdown-toggle round-image-50" type="button" id="menu1" data-toggle="dropdown">
+              <% if current_user.avatar.present? %>
+                <%= image_tag(current_user.avatar.url(:thumb)) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/50x50") %>
+              <% end %>
+            </button>
+            <b class="caret"></b>
             <ul class="dropdown-menu">
               <% if current_user && current_user.admin? %>
                 <li><%= link_to(content_tag(:i, " Admin Panel", class:'fa fa-gear'), admin_products_path) %></li>
               <% end %>
-                <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                <li><%= link_to 'Edit My Profile', edit_user_registration_path %></li>
                 <li><%= link_to(content_tag(:i, " My Orders", class:'fa fa-paperclip'),account_orders_path) %></li>
-                <li><%= link_to(content_tag(:i, ' 登出', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to(content_tag(:i, ' Logout', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
 
             </ul>
           </li>

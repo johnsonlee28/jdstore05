@@ -1,0 +1,2 @@
+str = "<%=j render :partial => "like", :locals => {:product => @product} %>";
+$("#product-like-<%= @product.id %>").html(str);

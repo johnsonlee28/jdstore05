@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  resources :subs
+  resources :subscribers
   devise_for :views
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'products#index'
+  root 'landing_page#index'
+
+  resources :landing_page
+  get 'home' => 'products#index'
 
   namespace :admin do
     resources :products
@@ -16,13 +21,23 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :subs
+
+
   resources :products do
     member do
       post :add_to_cart
+      post :buynow
+      post "like" => "products#like"
+      post "unlike" => "products#unlike"
+      post "collect" => "products#collect"
+      post "uncollect" => "products#uncollect"
     end
     collection do
-      get :search 
+      get :search
     end
+
+    resources :comments
   end
 
   resources :carts do
@@ -46,4 +61,6 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items
+
+
 end

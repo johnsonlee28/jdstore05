@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>MumCook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div id="holder">
-      <div class="container-fluid">
-        <div id="header">
-          <%= render 'common/navbar' %>
-          <%= render 'common/flashes' %>
+      <div class="container-fluid all-background">
+        <div id="header" >
+          <div class="row">
+            <div class="navbar-fixed">
+              <%= render 'common/navbar' %>
+            </div>
+            <%= render 'common/flashes' %>
+          </div>
         </div>
         <div id="body">
           <%= yield %>
