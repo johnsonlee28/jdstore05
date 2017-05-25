@@ -54,7 +54,7 @@
 .product-show-page {
   margin-top: 5px;
    padding: 15px;
-   border: none;
+   border: 1px dotted rgba(0, 0, 0, 0.09);
    transition: box-shadow 0.5s;
    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
    background-color: #fff;
@@ -64,7 +64,7 @@
 .comment-form {
   margin-top: 15px;
    padding: 15px;
-   border: none;
+   border: 1px dotted rgba(0, 0, 0, 0.09);
    transition: box-shadow 0.5s;
    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
    background-color: #fff;
@@ -260,7 +260,7 @@
 }
 
 .price-promo{
-  background-color: #f5f3ef;
+  background-color: #EFEBE9;
   border-top:1px dotted #dedede;
   border-bottom:1px dotted #dedede;
   padding:0 0 16px;
