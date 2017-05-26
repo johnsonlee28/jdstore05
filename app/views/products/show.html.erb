@@ -132,27 +132,21 @@
         <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
       <hr />
         <% Product.limit(5).sort_by{|product| -product.likes.count}.each do |product| %>
+        <% if product.photos.present? && product.category_id == @product.category_id && product.title != @product.title%>
           <div class="box panel panel-default">
             <%= link_to product_path(product) do %>
-              <% if product.photos.present? && product.category_id == @product.category_id%>
                 <%= image_tag(product.photos[0].avatar.url) %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
               <% end %>
-            <% end %>
-            <div class="fig" >
               <p class="actions text-center">
+                <% if product.quantity > 0 %>
                 <span><%= product.title%></span>
-                <% if product.quantity.present? && product.quantity > 0 %>
                   <%= link_to add_to_cart_product_path(product), class: "add-to-cart ",:method => :post do %>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                   <% end %>
-                <% else %>
-                  已销售一空，无法购买
                 <% end %>
               </p>
             </div>
-          </div>
+            <% end %>
         <% end %>
       </div>
     </div>
