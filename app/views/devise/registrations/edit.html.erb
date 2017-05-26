@@ -21,7 +21,7 @@
     <div class="form-group">
       <%= f.label :avatar, class:'col-sm-2 control-label', :label => "上传头像" %>
       <div class="col-sm-6" style="clear:left;">
-        <%= f.file_field :avatar %>
+        <%= f.file_field :avatar, as: :file %>
       </div>
     </div>
     <br><br><br>
