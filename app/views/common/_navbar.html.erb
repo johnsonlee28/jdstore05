@@ -42,7 +42,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
-            <i class="fa fa-shopping-cart"></i> <span class="badge"> <%= current_cart.products.count %> </span>
+            <i class="fa fa-shopping-cart fa-lg"></i> <span class="badge"> <%= current_cart.products.count %> </span>
           <% end %>
         </li>
         <% if !current_user %>
