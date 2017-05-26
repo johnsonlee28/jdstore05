@@ -138,7 +138,7 @@
                 <%= image_tag(product.photos[0].avatar.url) %>
               <% end %>
               <p class="actions text-center">
-                <% if product.quantity.present? && product.quantity > 0 && product.category_id == @product.category_id%>
+                <% if product.quantity > 0 %>
                 <span><%= product.title%></span>
                   <%= link_to add_to_cart_product_path(product), class: "add-to-cart ",:method => :post do %>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
