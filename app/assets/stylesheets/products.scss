@@ -21,6 +21,44 @@
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
+.article_parallax{
+  background:url('https://ww2.sinaimg.cn/large/006tNc79gy1fg6tz516oxj31hc0qyq7l.jpg');
+  background-size:cover;
+
+  height:734px;
+  display:block;
+  .headline{
+    text-align: center;
+    padding-top:280px;
+    font-family: Herr Von Muellerhoff;
+    color:#c59d5f;
+    font-size:100px;
+  }
+}
+
+.article_parallax_2{
+  background:url('https://ww3.sinaimg.cn/large/006tNc79gy1fg6x4nx4ckj31hc0qyq7h.jpg');
+  background-size:cover;
+
+  height:734px;
+  display:block;
+  .headline{
+    text-align: center;
+    padding-top:280px;
+    font-family: Herr Von Muellerhoff;
+    color:#c59d5f;
+    font-size:100px;
+  }
+}
+
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+}
+
+
+
 /* product-new-edit-page */
 .group{
   clear:both;

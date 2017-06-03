@@ -95,7 +95,7 @@ div.star-rating {
 /* universe */
 html,body{
   height: 100%;
-  font-family:"Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+  font-family:"Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3","Herr Von Muellerhoff",verdana;
   font-size:15px;
   line-height: 1.5;
   background-color: #F4F3F3;
@@ -120,7 +120,7 @@ html,body{
 }
 
 #navigation{
-  background-color:#4E342E;
+
   border-radius: 0px;
   transition: all 0.6s;
   -webkit-transition: all 0.6s;
@@ -137,23 +137,23 @@ html,body{
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover{
-  color:#FF5722;
+  color:#c59d5f;
 }
 
 .navbar-default .navbar-nav > .active > a{
-  color:#FF5722;
+  color:#c59d5f;
 }
 
 .navbar-default .navbar-nav > .active > a:hover{
-  color:#9E9E9E;
+  color:#BDBDBD;
 }
 
 .navbar-default .navbar-nav > li > a{
-  color:#FF5722;
+  color:#c59d5f;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
-  color:#9E9E9E;
+  color:#BDBDBD;
 }
 
 #footer{
