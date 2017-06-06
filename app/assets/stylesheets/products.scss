@@ -13,8 +13,20 @@
 
 .item h2 {
     position: absolute;
-    left: 250px;
-    top: 250px;
+    left: 430px;
+    top: 230px;
+    font-family: Herr Von Muellerhoff;
+    color:#c59d5f;
+    font-size:100px;
+}
+
+.item h4{
+  position: absolute;
+  left: 380px;
+  top: 300px;
+  font-family: Source Sans Pro;
+  color:#212121;
+  font-size:120px;
 }
 
 
@@ -24,10 +36,32 @@
   text-align: center;
 }
 
-
-.headline{
+.show-1{
   background-image: url('https://ww2.sinaimg.cn/large/006tNc79gy1fg6tz516oxj31hc0qyq7l.jpg');
   background-size: cover;
+  height:700px;
+}
+
+.show-2{
+  background-image: url('https://ww2.sinaimg.cn/large/006tNbRwgy1fgab0tlm26j31hc0qyn21.jpg');
+  background-size: cover;
+  height:700px;
+}
+
+.show-3{
+  background-image: url('https://ww2.sinaimg.cn/large/006tNbRwgy1fgbjeseos3j31hc0qyjx0.jpg');
+  background-size: cover;
+  height:700px;
+}
+
+.headline{
+  text-align: center;
+  font-family: Herr Von Muellerhoff;
+  color:#c59d5f;
+  font-size:100px;
+}
+
+.headline2{
   text-align: center;
   font-family: Herr Von Muellerhoff;
   color:#c59d5f;
