@@ -50,7 +50,7 @@
                 <%= link_to(product.title, product_path(product)) %>
               </div>
               <p class="product-index-desc">
-                <%= product.description %>
+                <%= product.detail %>
               </p>
               <div class="order-now">
                 <%= link_to buynow_product_path(product), method: :post, class:"btn btn-default pull-right" do %>
