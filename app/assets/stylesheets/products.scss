@@ -56,16 +56,23 @@
 .show-1{
   background-image: url('https://ww2.sinaimg.cn/large/006tNc79gy1fg6tz516oxj31hc0qyq7l.jpg');
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
 }
 
 .show-2{
   background-image: url('https://ww2.sinaimg.cn/large/006tNbRwgy1fgab0tlm26j31hc0qyn21.jpg');
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .show-3{
   background-image: url('https://ww2.sinaimg.cn/large/006tNbRwgy1fgbjeseos3j31hc0qyjx0.jpg');
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   height:700px;
 }
 
@@ -106,6 +113,29 @@
   margin:20px 0px;
 }
 
+.about-us{
+  font-family: Herr Von Muellerhoff;
+  color:#c59d5f;
+  font-size: 50px;
+  display:block;
+  padding-bottom: 10px;
+}
+
+.about-content{
+  font-family: Herr Von Muellerhoff;
+  color:#c59d5f;
+  font-size:30px;
+  display:block;
+  clear:left;
+}
+
+.signature{
+  font-family: Herr Von Muellerhoff;
+  color:#c59d5f;
+  font-size:30px;
+  display:block;
+  clear:left;
+}
 
 /* product-index 产品图 */
 .product-box{
