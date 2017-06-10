@@ -2,6 +2,71 @@
 
 <%= render "turn_pic"%>
 
+
+<!-- <div class="card">
+
+</div> -->
+
+<!-- 中间区域 -->
+
+  <div class="row">
+    <div class="color-banner">
+
+    </div>
+  </div>
+
+  <div class="decor-bottom">
+     <svg class="decor-p" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%"   >
+       <path d="M0 100 L2 60 L4 100 L6 60 L8 100 L10 60 L12 100 L14 60 L16 100 L18 60 L20 100 L22 60 L24 100 L26 60 L28 100 L30 60 L32 100 L34 60 L36 100 L38 60 L40 100 L42 60 L44 100 L46 60 L48 100 L50 60 L52 100 L54 60 L56 100 L58 60 L60 100 L62 60 L64 100 L66 60 L68 100 L70 60 L72 100 L74 60 L76 100 L78 60 L80 100 L82 60 L84 100 L86 60 L88 100 L90 60 L92 100 L94 60 L96 100 L98 60 L100 100 Z" stroke-width="0"></path>
+     </svg>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="overlay container">
+        <div class="introduction col-md-12">
+        </div>
+      </div>
+    </div>
+
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="product-all col-md-6 container">
+        <div class="product-box col-md-12">
+          <div class="">
+            <div class="col-md-5 product-item image_decor" >
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos.first.avatar.indeximg.url, class:"product-index-style-img img-responsive")%>
+                <% else %>
+                  <%= image_tag("http://placehold.it/600x400&text=No Pic", class:"product-index-style-img img-responsive") %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <div class="col-md-7">
+              <div class="product-index-title">
+                <%= link_to(product.title, product_path(product)) %>
+              </div>
+              <p class="product-index-desc">
+                <%= product.description %>
+              </p>
+              <div class="order-now">
+                <%= link_to buynow_product_path(product), method: :post, class:"btn btn-default pull-right" do %>
+                  <span class="order-now">Order Now</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
 <!--
 <div class="row masonry-container transitions-enabled">
     <% @products.each do |product| %>
