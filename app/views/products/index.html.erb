@@ -46,16 +46,18 @@
             </div>
 
             <div class="col-md-7">
-              <div class="product-index-title">
-                <%= link_to(product.title, product_path(product)) %>
-              </div>
-              <p class="product-index-desc">
-                <%= product.detail %>
-              </p>
-              <div class="order-now">
-                <%= link_to buynow_product_path(product), method: :post, class:"btn btn-default pull-right" do %>
-                  <span class="order-now">Order Now</span>
-                <% end %>
+              <div class="title-desc">
+                <div class="product-index-title">
+                  <%= link_to(product.title, product_path(product)) %>
+                </div>
+                <p class="product-index-desc">
+                  <%= product.detail %>
+                </p>
+                <div class="order-now">
+                  <%= link_to buynow_product_path(product), method: :post, class:"btn btn-default pull-right" do %>
+                    <span class="order-now">Order Now</span>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
