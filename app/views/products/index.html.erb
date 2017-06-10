@@ -38,7 +38,7 @@
             <div class="col-md-5 product-item image_decor" >
               <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
-                  <%= image_tag(product.photos.first.avatar.indeximg.url, class:"product-index-style-img img-responsive")%>
+                  <%= image_tag(product.photos.first.avatar.medium.url, class:"product-index-style-img img-responsive")%>
                 <% else %>
                   <%= image_tag("http://placehold.it/600x400&text=No Pic", class:"product-index-style-img img-responsive") %>
                 <% end %>
